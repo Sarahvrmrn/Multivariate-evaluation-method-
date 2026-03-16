@@ -122,6 +122,7 @@ def read_files(path: str, tag: str):
         y = Helpers.area_normalization(x,y_corrected)
         baseline_y_area = Helpers.baseline_correction(y)*0.05
 
+        df['TIC'] = y
         
         merged_df = pd.merge(
             merged_df, df, how='outer', left_index=True, right_index=True)
